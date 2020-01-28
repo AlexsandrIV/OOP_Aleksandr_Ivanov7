@@ -5,14 +5,17 @@ public class MainQuote {
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
         int numberQuote;
-        System.out.print("Enter number of quote: ");
-         do {
+        System.out.println("Enter the number of the quote you want to see. Enter any text to exit.");
+        do {
             numberQuote = scanner.nextInt();
             StringBuilder pageQuote = new GetData().getData(numberQuote);
-            System.out.println(pageQuote);
-            ParseQuote pq = new ParseQuote();
-            System.out.println(pq.parsePage(pageQuote.toString()).trim());
-        } while(scanner.hasNextInt());
+            ParseQuote pq = new ParseQuote(pageQuote.toString());
+            if(pq.checkExistPage(numberQuote)) {
+                System.out.println(pq.parsePage(pageQuote.toString()).trim());
+            }else{
+                System.out.println("Quote isn't exist ");
+            }
+        } while (scanner.hasNextInt());
         scanner.close();
     }
 }
