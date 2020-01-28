@@ -1,7 +1,14 @@
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * @author Aleksandr_Ivanov7
+ */
 public class MainQuote {
+    /**
+     *
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
         int numberQuote;
