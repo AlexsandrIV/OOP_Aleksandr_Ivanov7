@@ -26,6 +26,7 @@ public class ParseQuote {
                 .replaceAll("&lt","<")
                 .replaceAll("&gt",">")
                 .replaceAll("&quot","\"")
-                .replaceAll("<br />", "\n");
+                .replaceAll("<br />", "\n")
+                .replaceAll(";","");
     }
 }
